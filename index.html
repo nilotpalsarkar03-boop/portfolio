@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nilotpal Sarkar — Designer who builds things</title>
+  <meta name="description" content="Portfolio of Nilotpal Sarkar: UI/UX designer and frontend developer from Kokrajhar, Assam.">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@700&family=Caveat:wght@400;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Floating pill nav -->
+<header class="nav" aria-label="Main">
+  <a class="nav__logo" href="#top" aria-label="Home"><img src="assets/logo.png" alt="Nilotpal's logo: the Bengali word না" width="31" height="36"></a>
+  <nav class="nav__links">
+    <a href="#selected-work">Work</a>
+    <a href="#after-hours">Playground</a>
+    <a href="#about">About</a>
+  </nav>
+  <button class="nav__diya" type="button" aria-label="Dark mode (coming soon)" title="Dark mode coming soon"><img src="assets/diya.svg" alt="" width="24" height="24"></button>
+  <a class="btn btn--primary" href="#" aria-label="Download résumé">Resume ↗</a>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__stage">
+      <div class="bp" aria-hidden="true"></div>
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="hero__sun" aria-hidden="true"></div>
+      <div class="hero__ground" aria-hidden="true"></div>
+      <div class="hero__horizon" aria-hidden="true"></div>
+
+      <div class="hero__intro">
+        <div class="hero__status">
+          <span class="badge"><span class="badge__dot" aria-hidden="true"></span>Open to work</span>
+          <span class="label-s muted"><span class="rani ist-time">14:32 IST</span> · Kokrajhar, Assam</span>
+        </div>
+        <p class="bn-phrase"><span class="bn" lang="bn">নমস্কার</span><span class="hand muted">nomoshkar — hello</span></p>
+        <h1 id="hero-title" class="hero__name">portfolio</h1>
+        <p class="hero__bio">I design interfaces and then build them, from research and Figma to frontend code and ESP32 boards. Final-year Multimedia Communication &amp; Design student at CIT Kokrajhar, freelancing in UI/UX and frontend.</p>
+      </div>
+
+      <span class="chip chip--xl chip--accent hero__chip" style="--x:333px;--y:695px;--r:6deg">Designer</span>
+      <span class="chip chip--xl chip--soft hero__chip" style="--x:1278px;--y:655px;--r:6deg">Service</span>
+      <span class="chip chip--xl chip--solid hero__chip" style="--x:1014px;--y:634px;--r:-5deg">System</span>
+      <span class="chip chip--xl chip--solid hero__chip" style="--x:50px;--y:586px;--r:-5deg">Research</span>
+      <span class="chip chip--xl chip--accent hero__chip" style="--x:820px;--y:702px;--r:3deg">Maker</span>
+
+      <p class="note hero__note" aria-hidden="true">what I do<svg class="note__arrow" width="56" height="28" viewBox="0 -2 60 34" fill="none"><path d="M1 4C29 -2 47 8 57 30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M50.5 25.3L57 30L57.8 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></p>
+
+      <a class="stamp hero__stamp" href="#" aria-label="Download résumé PDF">
+        <span class="stamp__ring" aria-hidden="true"></span>
+        <span class="stamp__disc"><span class="label-m">Resume ↗</span><span class="label-s">PDF · 2026</span></span>
+      </a>
+
+      <div class="tabs hero__tabs" role="group" aria-label="Choose a view">
+        <button class="tab is-active" type="button" data-view="general" aria-pressed="true">For general</button>
+        <button class="tab" type="button" data-view="designers" aria-pressed="false">For designers</button>
+      </div>
+      <p class="label-s muted hero__scroll">↓ Scroll</p>
+      <p class="label-s muted hero__count">4 projects · 2026</p>
+    </div>
+  </section>
+
+  <!-- SELECTED WORK -->
+  <section class="section" id="selected-work" data-view="general" aria-labelledby="work-title">
+    <div class="bp" aria-hidden="true"></div>
+    <div class="wrap stack-64">
+      <div class="sh"><span class="sh__num">(01)</span><h2 class="sh__title" id="work-title">Selected work</h2><span class="sh__rule"></span><span class="label-s muted">4 projects · 2026</span></div>
+
+      <!-- General view -->
+      <div class="view view--general">
+        <div class="featured">
+          <div class="featured__media">
+            <a class="sticker featured__sticker" href="#" aria-label="Open project 01"><span class="sticker__img">Image</span></a>
+            <p class="note featured__note" aria-hidden="true">lorem ipsum, my favourite<svg class="note__arrow" width="56" height="28" viewBox="0 -2 60 34" fill="none"><path d="M1 4C29 -2 47 8 57 30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M50.5 25.3L57 30L57.8 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></p>
+          </div>
+          <div class="featured__info">
+            <p class="display-l accent">01</p>
+            <h3 class="h2">Lorem ipsum dolor sit amet, consectetur</h3>
+            <p class="body-m secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <ul class="tags"><li class="chip">Lorem</li><li class="chip">Ipsum</li><li class="chip">Dolor</li></ul>
+            <p class="label-s muted">Client · Year</p>
+            <a class="btn btn--primary" href="#">Read case study →</a>
+          </div>
+        </div>
+
+        <div class="index">
+          <div class="kantha" aria-hidden="true"></div>
+          <a class="irow" href="#">
+            <span class="irow__num">02</span><span class="irow__title">Lorem ipsum dolor sit amet</span><span class="irow__spacer"></span>
+            <span class="tags"><span class="chip">Lorem</span><span class="chip">Ipsum</span></span><span class="label-s muted">2026</span><span class="irow__arrow" aria-hidden="true"></span>
+            <span class="sticker irow__preview" aria-hidden="true"><span class="sticker__img">Image</span></span>
+          </a>
+          <a class="irow" href="#">
+            <span class="irow__num">03</span><span class="irow__title">Lorem ipsum dolor sit amet</span><span class="irow__spacer"></span>
+            <span class="tags"><span class="chip">Lorem</span><span class="chip">Ipsum</span></span><span class="label-s muted">2026</span><span class="irow__arrow" aria-hidden="true"></span>
+            <span class="sticker irow__preview" aria-hidden="true"><span class="sticker__img">Image</span></span>
+          </a>
+          <a class="irow" href="#">
+            <span class="irow__num">04</span><span class="irow__title">Lorem ipsum dolor sit amet</span><span class="irow__spacer"></span>
+            <span class="tags"><span class="chip">Lorem</span><span class="chip">Ipsum</span></span><span class="label-s muted">2026</span><span class="irow__arrow" aria-hidden="true"></span>
+            <span class="sticker irow__preview" aria-hidden="true"><span class="sticker__img">Image</span></span>
+          </a>
+        </div>
+
+        <a class="btn btn--secondary" href="#">View all work →</a>
+      </div>
+
+      <!-- For designers view -->
+      <div class="view view--designers" hidden>
+        <article class="pcard pcard--featured">
+          <div class="pcard__img">Project image · 16:7</div>
+          <div class="pcard__body">
+            <p class="pcard__meta"><span class="label-m accent">01</span><span class="label-s muted">Client · Year</span></p>
+            <h3 class="h2">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+            <p class="body-m secondary">Lorem ipsum dolor sit amet · sed do eiusmod tempor incididunt ut labore</p>
+            <ul class="tags"><li class="chip">Lorem</li><li class="chip">Ipsum</li><li class="chip">Dolor</li></ul>
+            <a class="btn btn--ghost" href="#">Read case study →</a>
+          </div>
+        </article>
+        <div class="pgrid">
+          <article class="pcard">
+            <div class="pcard__img pcard__img--grid">Project image · 3:2</div>
+            <div class="pcard__body">
+              <p class="pcard__meta"><span class="label-m accent">02</span><span class="label-s muted">Client · Year</span></p>
+              <h3 class="h3">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+              <p class="body-m secondary">Lorem ipsum dolor sit amet · sed do eiusmod tempor incididunt ut labore</p>
+              <ul class="tags"><li class="chip">Lorem</li><li class="chip">Ipsum</li><li class="chip">Dolor</li></ul>
+              <a class="btn btn--ghost" href="#">Read case study →</a>
+            </div>
+          </article>
+          <article class="pcard">
+            <div class="pcard__img pcard__img--grid">Project image · 3:2</div>
+            <div class="pcard__body">
+              <p class="pcard__meta"><span class="label-m accent">03</span><span class="label-s muted">Client · Year</span></p>
+              <h3 class="h3">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+              <p class="body-m secondary">Lorem ipsum dolor sit amet · sed do eiusmod tempor incididunt ut labore</p>
+              <ul class="tags"><li class="chip">Lorem</li><li class="chip">Ipsum</li><li class="chip">Dolor</li></ul>
+              <a class="btn btn--ghost" href="#">Read case study →</a>
+            </div>
+          </article>
+        </div>
+        <article class="pcard pcard--featured">
+          <div class="pcard__img">Project image · 16:7</div>
+          <div class="pcard__body">
+            <p class="pcard__meta"><span class="label-m accent">04</span><span class="label-s muted">Client · Year</span></p>
+            <h3 class="h2">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+            <p class="body-m secondary">Lorem ipsum dolor sit amet · sed do eiusmod tempor incididunt ut labore</p>
+            <ul class="tags"><li class="chip">Lorem</li><li class="chip">Ipsum</li><li class="chip">Dolor</li></ul>
+            <a class="btn btn--ghost" href="#">Read case study →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- AFTER HOURS -->
+  <section class="section section--accent" id="after-hours" aria-labelledby="ah-title">
+    <div class="wrap stack-48">
+      <div class="sh sh--on-accent"><span class="sh__num">(02)</span><h2 class="sh__title" id="ah-title">After hours</h2><span class="sh__rule"></span><span class="label-s">things I make when Figma is closed</span></div>
+      <p class="body-l on-accent lead">Hardware, keyboards, sketches and the odd late-night build. Engineering is how I learn what an interface should feel like.</p>
+      <div class="collage">
+        <figure class="polaroid" style="--cx:140px;--cy:214px;--w:300px;--r:5deg"><div class="polaroid__photo">photo</div><figcaption>an ESP32-S3 door lock that recognises faces offline (final-year project)</figcaption></figure>
+        <figure class="polaroid" style="--cx:430px;--cy:138px;--w:280px;--r:-4deg"><div class="polaroid__photo">photo</div><figcaption>a 3×3 macro pad: one key, one app</figcaption></figure>
+        <figure class="polaroid" style="--cx:713px;--cy:231px;--w:260px;--r:3deg"><div class="polaroid__photo">photo</div><figcaption>sketchbook, page 42</figcaption></figure>
+        <figure class="polaroid" style="--cx:943px;--cy:141px;--w:255px;--r:-6deg"><div class="polaroid__photo">photo</div><figcaption>late-night soldering</figcaption></figure>
+        <figure class="polaroid" style="--cx:1150px;--cy:267px;--w:270px;--r:6deg"><div class="polaroid__photo">photo</div><figcaption>the desk where it all happens</figcaption></figure>
+        <p class="note note--white collage__note" aria-hidden="true">building one right now<svg class="note__arrow" width="56" height="28" viewBox="0 -2 60 34" fill="none"><path d="M1 4C29 -2 47 8 57 30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M50.5 25.3L57 30L57.8 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></p>
+      </div>
+      <a class="btn btn--secondary btn--paper" href="#">Visit the playground →</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about" aria-labelledby="about-title">
+    <div class="bp" aria-hidden="true"></div>
+    <div class="wrap stack-48">
+      <div class="sh"><span class="sh__num">(03)</span><h2 class="sh__title" id="about-title">About</h2><span class="sh__rule"></span><span class="label-s muted">background &amp; toolkit</span></div>
+      <div class="about">
+        <div class="portrait">
+          <span class="label-s muted">line-drawn self-portrait</span>
+          <p class="note" aria-hidden="true">that’s me, in one line<svg class="note__arrow" width="56" height="28" viewBox="0 -2 60 34" fill="none"><path d="M1 4C29 -2 47 8 57 30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M50.5 25.3L57 30L57.8 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></p>
+        </div>
+        <div class="bio">
+          <h3 class="h1">Hi, I’m Nilotpal.</h3>
+          <p class="body-l">A final-year Multimedia Communication &amp; Design student at CIT Kokrajhar, Assam, and a freelance designer and developer.</p>
+          <p class="body-m secondary">I like the whole journey: talking to the people I design for, shaping the information architecture, polishing the UI, then writing the frontend myself. The engineering side keeps my designs honest; the design side keeps my builds human.</p>
+          <div class="skills">
+            <div><p class="label-m accent">Design</p><ul class="tags tags--wrap"><li class="chip">UX research</li><li class="chip">Service design</li><li class="chip">Information architecture</li><li class="chip">UI design</li><li class="chip">Design systems</li><li class="chip">Prototyping</li></ul></div>
+            <div><p class="label-m accent">Build</p><ul class="tags tags--wrap"><li class="chip">HTML &amp; CSS</li><li class="chip">JavaScript</li><li class="chip">React</li><li class="chip">Figma to code</li><li class="chip">Responsive web</li></ul></div>
+            <div><p class="label-m accent">Make</p><ul class="tags tags--wrap"><li class="chip">ESP32</li><li class="chip">IoT</li><li class="chip">Electronics</li><li class="chip">Edge AI</li></ul></div>
+          </div>
+          <dl class="now">
+            <div><dt class="label-s muted">Now</dt><dd>Final-year project: smart facial-recognition security system on ESP32</dd></div>
+            <div><dt class="label-s muted">Now</dt><dd>Minor project: a crop protection service for farmers in Kokrajhar</dd></div>
+            <div><dt class="label-s muted">Open to</dt><dd>Full-time UI/UX and product design roles, and freelance work</dd></div>
+          </dl>
+          <a class="btn btn--secondary" href="#">More about me →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="kantha" aria-hidden="true"></div></div>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact" aria-labelledby="contact-title">
+    <div class="bp" aria-hidden="true"></div>
+    <div class="wrap stack-48">
+      <div class="sh"><span class="sh__num">(04)</span><h2 class="sh__title" id="contact-title">Contact</h2><span class="sh__rule"></span><span class="label-s muted">say hello</span></div>
+      <p class="bn-phrase"><span class="bn" lang="bn">চলো, কথা বলি</span><span class="hand muted">cholo, kotha boli — let’s talk</span></p>
+      <p class="display-l contact__big">Got a role or a project?<br><span class="accent">Let’s make it.</span></p>
+      <p class="body-l secondary lead">I’m open to full-time design roles and freelance UI/UX + frontend work. Email is the fastest way to reach me.</p>
+      <div class="actions">
+        <a class="btn btn--primary" href="mailto:nilotpalsarkar03@gmail.com">Say hello →</a>
+        <a class="btn btn--secondary" href="#">Download resume</a>
+        <span class="actions__gap" aria-hidden="true"></span>
+        <a class="btn btn--ghost" href="#">LinkedIn ↗</a>
+        <a class="btn btn--ghost" href="#">Behance ↗</a>
+        <a class="btn btn--ghost" href="#">GitHub ↗</a>
+      </div>
+      <a class="email" href="mailto:nilotpalsarkar03@gmail.com">nilotpalsarkar03@gmail.com</a>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER — Logo Rise -->
+<footer class="footer">
+  <div class="footer__row">
+    <p class="label-s muted footer__copy">© 2026 /Nilotpal · Made in Assam</p>
+    <p class="body-s secondary">Nilotpal means blue lotus — hence all the indigo.</p>
+    <p class="label-s muted"><span class="rani ist-time">14:32 IST</span> · Kokrajhar, Assam</p>
+    <a class="btn btn--ghost" href="#top">Back to top ↑</a>
+  </div>
+  <div class="footer__rise">
+    <div class="bp bp--rani" aria-hidden="true"></div>
+    <div class="rise__glow" aria-hidden="true"></div>
+    <div class="rise__logo" aria-hidden="true">
+      <img class="rise__halo" src="assets/halo.svg" alt="" width="406" height="406">
+      <span class="rise__edge"></span>
+      <img class="rise__img" src="assets/logo.png" alt="" width="171" height="203">
+    </div>
+    <div class="kantha rise__horizon" aria-hidden="true"></div>
+    <div class="rise__ground" aria-hidden="true"></div>
+    <p class="note rise__note" aria-hidden="true">it says “no” — in Bengali<svg class="note__arrow" width="56" height="28" viewBox="0 -2 60 34" fill="none"><path d="M1 4C29 -2 47 8 57 30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M50.5 25.3L57 30L57.8 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></p>
+    <p class="label-s muted rise__left">Na · Blue lotus · Kokrajhar</p>
+    <p class="label-s muted rise__right">The end (for now)</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
