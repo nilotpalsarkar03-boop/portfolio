@@ -1,11 +1,14 @@
 # Admin page for nilotpaldesign.com (Decap CMS)
 # Everything you edit here is saved to the content/ folder in the GitHub repo,
-# and Netlify republishes the site automatically.
+# and GitHub Pages republishes the site automatically (about a minute).
+# Login still goes through Netlify's free GitHub sign-in service (site: nilotpaldesign.netlify.app).
 
 backend:
   name: github
   repo: nilotpalsarkar03-boop/portfolio
   branch: main
+  base_url: https://api.netlify.com
+  site_domain: nilotpaldesign.netlify.app
   commit_messages:
     update: "Content: update {{slug}} (via admin)"
     uploadMedia: "Upload {{path}} (via admin)"

@@ -86,8 +86,8 @@
 
   /* ---------- Content from the admin page (content/*.json) ---------- */
   const load = n => fetch(`/content/${n}.json`, { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).catch(() => null);
-  const cdn = (src, w) => /^\/assets\/uploads\//.test(src) && !/^(localhost|127\.)/.test(location.hostname)
-    ? `/.netlify/images?url=${encodeURIComponent(src)}&w=${w}&q=75` : src;
+  // Images are served as-is (GitHub Pages has no image CDN); keep the helper so callers stay simple
+  const cdn = src => src;
   const pic = (src, alt, w = 1600, cls = 'ph') => src
     ? `<img class="${cls}" src="${esc(cdn(src, w))}" alt="${esc(alt)}" loading="lazy" decoding="async" ${onErr}>` : '';
 
