@@ -279,6 +279,11 @@ button{font:inherit;border:0;background:none;cursor:pointer;color:inherit}
   .nav__links a{display:none}
   .nav__links a.nav__home,.nav__links a[href="#selected-work"]{display:inline}
   .nav__diya{display:none}
+  /* After hours: two polaroids visible side by side, swipe for more */
+  .collage{gap:14px;padding:16px 4px 24px}
+  .polaroid{width:calc((100% - 14px) / 2);padding:8px 8px 12px;gap:8px;transform:rotate(calc(var(--r) * .4))}
+  .polaroid__photo{height:130px}
+  .polaroid figcaption{font-size:18px;line-height:21px}
 }
 
 /* ============ Reduced motion ============ */
