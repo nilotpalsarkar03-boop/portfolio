@@ -15,11 +15,11 @@
     {
       "size": "5 cm",
       "shape": "square",
-      "download": "",
-      "name": "Cha lover",
+      "download": "/assets/uploads/greenna_5cm.png",
+      "name": "Green na",
       "visible": true,
       "status": "available",
-      "image": "",
+      "image": "/assets/uploads/greenna_5cm.png",
       "year": "2026",
       "category": "bengali"
     },
