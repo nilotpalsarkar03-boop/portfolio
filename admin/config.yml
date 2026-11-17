@@ -70,6 +70,28 @@ collections:
                   - { label: "Available to download", value: available }
                   - { label: "Coming soon", value: soon }
 
+      - name: youtube
+        label: YouTube videos
+        file: content/youtube.json
+        fields:
+          - { label: Show YouTube section on website, name: show_section, widget: boolean, default: true }
+          - { label: Channel link, name: channel_url, widget: string, required: false, hint: "e.g. https://www.youtube.com/@yourname — used by the Subscribe stamp and 'All videos'" }
+          - { label: Channel handle, name: channel_handle, widget: string, required: false, hint: "e.g. @yourname — shown on the Subscribe stamp" }
+          - label: Videos (the FIRST one is the big featured video; drag to change the order)
+            name: videos
+            widget: list
+            max: 4
+            summary: "{{fields.title}} {{fields.link}}"
+            collapsed: true
+            fields:
+              - { label: Show on website, name: visible, widget: boolean, default: true }
+              - { label: YouTube video link, name: link, widget: string, hint: "Paste the video's link, e.g. https://youtu.be/abc123 or https://www.youtube.com/watch?v=abc123" }
+              - { label: Title (optional), name: title, widget: string, required: false, hint: "Leave empty to use the title from YouTube automatically" }
+              - { label: Short description (featured video only, optional), name: description, widget: text, required: false }
+              - { label: Episode / date label (optional), name: meta, widget: string, required: false, hint: "e.g. EP 03 · MAR 2026" }
+              - { label: Length (optional), name: duration, widget: string, required: false, hint: "e.g. 12:34 — shown on the thumbnail" }
+              - { label: Custom thumbnail (optional), name: thumbnail, widget: image, required: false, hint: "Leave empty to use the video's own YouTube thumbnail" }
+
       - name: about
         label: About & status
         file: content/about.json
