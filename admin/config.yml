@@ -36,7 +36,7 @@ collections:
             collapsed: true
             fields:
               - { label: Show on website, name: visible, widget: boolean, default: true }
-              - { label: Title, name: title, widget: string }
+              - { label: Title, name: title, widget: string, hint: "Wrap words in *stars* to colour them pink, e.g. */Oral_Care* is very important" }
               - { label: Client, name: client, widget: string, required: false, hint: "e.g. Freelance, CIT Kokrajhar, Personal" }
               - { label: Year, name: year, widget: string, default: "2026" }
               - { label: Your role, name: role, widget: string, required: false, hint: "e.g. UX research, UI design, frontend" }
@@ -50,6 +50,7 @@ collections:
         label: Playground stickers
         file: content/stickers.json
         fields:
+          - { label: Full sheet (A4 PDF), name: full_sheet, widget: file, required: false, hint: "The '↓ Full sheet · A4 PDF' button downloads this file" }
           - label: Stickers (drag to reorder — this is the order on the Playground page)
             name: stickers
             widget: list
@@ -62,6 +63,8 @@ collections:
               - { label: Sticker image, name: image, widget: image, required: false, hint: "PNG with a transparent background works best (about 1000 × 1000 px). Leave empty to show a blank placeholder." }
               - { label: Download file (optional), name: download, widget: file, required: false, hint: "High-res PNG or print-ready PDF. If empty, visitors download the sticker image above." }
               - { label: Print size, name: size, widget: string, default: "5 cm", hint: "Shown on hover, e.g. ↓ PNG · 5 cm" }
+              - { label: Category (filter chip), name: category, widget: select, default: bengali, options: [{ label: Bengali, value: bengali }, { label: Tech, value: tech }, { label: Doodles, value: doodles }] }
+              - { label: Shape, name: shape, widget: select, default: round, options: [{ label: Round, value: round }, { label: Rounded square, value: square }] }
               - label: Status
                 name: status
                 widget: select
@@ -116,4 +119,5 @@ collections:
           - { label: LinkedIn URL, name: linkedin, widget: string, required: false }
           - { label: Behance URL, name: behance, widget: string, required: false }
           - { label: GitHub URL, name: github, widget: string, required: false }
+          - { label: Instagram URL, name: instagram, widget: string, required: false }
           - { label: Résumé PDF, name: resume, widget: file, required: false, media_library: { config: { multiple: false } } }

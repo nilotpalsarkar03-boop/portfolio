@@ -1,4 +1,5 @@
 {
+  "full_sheet": "",
   "stickers": [
     {
       "name": "Na logo",
@@ -7,7 +8,9 @@
       "download": "",
       "size": "5 cm",
       "status": "available",
-      "visible": true
+      "visible": true,
+      "category": "bengali",
+      "shape": "round"
     },
     {
       "name": "Cha lover",
@@ -16,7 +19,9 @@
       "download": "",
       "size": "5 cm",
       "status": "available",
-      "visible": true
+      "visible": true,
+      "category": "bengali",
+      "shape": "square"
     },
     {
       "name": "Blue lotus",
@@ -25,7 +30,9 @@
       "download": "",
       "size": "5 cm",
       "status": "available",
-      "visible": true
+      "visible": true,
+      "category": "bengali",
+      "shape": "round"
     },
     {
       "name": "Nomoshkar",
@@ -34,7 +41,9 @@
       "download": "",
       "size": "5 cm",
       "status": "available",
-      "visible": true
+      "visible": true,
+      "category": "bengali",
+      "shape": "round"
     },
     {
       "name": "Solder & chill",
@@ -43,7 +52,9 @@
       "download": "",
       "size": "5 cm",
       "status": "available",
-      "visible": true
+      "visible": true,
+      "category": "tech",
+      "shape": "square"
     },
     {
       "name": "ESP32 inside",
@@ -52,7 +63,9 @@
       "download": "",
       "size": "5 cm",
       "status": "available",
-      "visible": true
+      "visible": true,
+      "category": "tech",
+      "shape": "round"
     },
     {
       "name": "Kantha stitch",
@@ -61,7 +74,9 @@
       "download": "",
       "size": "5 cm",
       "status": "available",
-      "visible": true
+      "visible": true,
+      "category": "doodles",
+      "shape": "square"
     },
     {
       "name": "404: Na",
@@ -70,7 +85,9 @@
       "download": "",
       "size": "5 cm",
       "status": "available",
-      "visible": true
+      "visible": true,
+      "category": "doodles",
+      "shape": "round"
     }
   ]
 }

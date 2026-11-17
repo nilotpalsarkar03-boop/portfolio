@@ -2,64 +2,63 @@
   "projects": [
     {
       "visible": true,
-      "title": "Lorem ipsum dolor sit amet, consectetur",
-      "client": "Client",
-      "year": "2026",
       "role": "",
-      "tags": [
-        "Lorem",
-        "Ipsum",
-        "Dolor"
-      ],
-      "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "cover": "",
+      "cover": "/assets/img/home-featured-01.jpg",
       "note": "lorem ipsum, my favourite",
-      "link": ""
+      "link": "",
+      "title": "Intervening Agricultural Crop Protection",
+      "client": "Graduation Project",
+      "year": "2026",
+      "tags": [
+        "Serviece",
+        "User journey",
+        "Stackholder"
+      ],
+      "summary": "Introducing agricultural ecosystem with crop-protection service that supports farmers in making informed cultivation decisions & planning their agricultural activities"
     },
     {
       "visible": true,
-      "title": "Lorem ipsum dolor sit amet",
-      "client": "Client",
-      "year": "2026",
       "role": "",
-      "tags": [
-        "Lorem",
-        "Ipsum"
-      ],
-      "summary": "Lorem ipsum dolor sit amet · sed do eiusmod tempor incididunt ut labore",
       "cover": "",
       "note": "",
-      "link": ""
+      "link": "",
+      "title": "Digital game design in school for elementary kids",
+      "year": "2025",
+      "tags": [
+        "Game design",
+        "Unity",
+        "Research"
+      ],
+      "summary": ""
     },
     {
       "visible": true,
-      "title": "Lorem ipsum dolor sit amet",
-      "client": "Client",
-      "year": "2026",
       "role": "",
-      "tags": [
-        "Lorem",
-        "Ipsum"
-      ],
-      "summary": "Lorem ipsum dolor sit amet · sed do eiusmod tempor incididunt ut labore",
       "cover": "",
       "note": "",
-      "link": ""
+      "link": "",
+      "title": "System Design & Complex System in Autonomous -Driving ADAS",
+      "year": "2026",
+      "tags": [
+        "Complex",
+        "systems Design"
+      ],
+      "summary": ""
     },
     {
       "visible": true,
-      "title": "Lorem ipsum dolor sit amet",
-      "client": "Client",
-      "year": "2026",
       "role": "",
-      "tags": [
-        "Lorem",
-        "Ipsum"
-      ],
-      "summary": "Lorem ipsum dolor sit amet · sed do eiusmod tempor incididunt ut labore",
       "cover": "",
       "note": "",
-      "link": ""
+      "link": "",
+      "title": "*/Oral_Care* is very important in India.  But do we care?",
+      "year": "2026",
+      "tags": [
+        "Intraction",
+        "Information",
+        "User study"
+      ],
+      "summary": ""
     }
   ]
 }
