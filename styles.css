@@ -271,8 +271,14 @@ button{font:inherit;border:0;background:none;cursor:pointer;color:inherit}
   .hero__ground{top:auto;bottom:-139px;left:-50vw;right:-50vw}
   .hero__horizon{display:none}
 }
+.nav__home{display:none}
 @media (max-width:560px){
-  .nav__links{display:none}
+  /* Phone header: logo · Home · Work · Resume (no theme toggle) */
+  .nav{gap:12px}
+  .nav__links{display:flex;gap:14px;padding:0 6px}
+  .nav__links a{display:none}
+  .nav__links a.nav__home,.nav__links a[href="#selected-work"]{display:inline}
+  .nav__diya{display:none}
 }
 
 /* ============ Reduced motion ============ */
