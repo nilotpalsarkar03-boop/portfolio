@@ -1,6 +1,15 @@
 {
   "show_section": true,
-  "channel_url": "",
-  "channel_handle": "",
-  "videos": []
+  "channel_url": "https://www.youtube.com/channel/UCinM-yc3Darmeo0WWLB4RLw",
+  "channel_handle": "@Talk-Nilotpal",
+  "videos": [
+    {
+      "visible": true,
+      "link": "https://youtu.be/gvJTup9AVv4",
+      "title": "What i will do with my degree ? Designer 2026",
+      "description": "This video tells more about myself, and I am being confused about my graduation project as a designer.",
+      "meta": "1 May 2026",
+      "duration": "01:00"
+    }
+  ]
 }
