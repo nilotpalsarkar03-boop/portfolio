@@ -271,14 +271,13 @@ button{font:inherit;border:0;background:none;cursor:pointer;color:inherit}
   .hero__ground{top:auto;bottom:-139px;left:-50vw;right:-50vw}
   .hero__horizon{display:none}
 }
-.nav__home{display:none}
+.nav__work{display:none}
 @media (max-width:560px){
-  /* Phone header: logo · Home · Work · Resume (no theme toggle) */
-  .nav{gap:12px}
-  .nav__links{display:flex;gap:14px;padding:0 6px}
-  .nav__links a{display:none}
-  .nav__links a.nav__home,.nav__links a[href="#selected-work"]{display:inline}
+  /* Phone header: logo · Work · Resume (Work replaces the theme toggle) */
+  .nav__links{display:none}
   .nav__diya{display:none}
+  .nav__work{display:inline-flex;align-items:center;height:40px;padding:0 18px;border-radius:20px;background:var(--subtle);font:500 14px/20px var(--mono);letter-spacing:.28px;text-transform:uppercase;color:var(--text)}
+  .nav__work:hover{background:var(--accent-subtle);color:var(--on-subtle)}
   /* After hours: two polaroids visible side by side, swipe for more */
   .collage{gap:14px;padding:16px 4px 24px}
   .polaroid{width:calc((100% - 14px) / 2);padding:8px 8px 12px;gap:8px;transform:rotate(calc(var(--r) * .4))}
