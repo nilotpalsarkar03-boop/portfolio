@@ -2,92 +2,92 @@
   "full_sheet": "",
   "stickers": [
     {
-      "name": "Na logo",
-      "year": "2026",
-      "image": "",
-      "download": "",
       "size": "5 cm",
-      "status": "available",
+      "shape": "square",
+      "download": "/assets/uploads/join5cm.png",
+      "name": "Join",
       "visible": true,
-      "category": "bengali",
-      "shape": "round"
+      "status": "available",
+      "image": "/assets/uploads/join5cm.png",
+      "year": "2026",
+      "category": "tech"
     },
     {
+      "size": "5 cm",
+      "shape": "square",
+      "download": "",
       "name": "Cha lover",
-      "year": "2026",
-      "image": "",
-      "download": "",
-      "size": "5 cm",
-      "status": "available",
       "visible": true,
-      "category": "bengali",
-      "shape": "square"
+      "status": "available",
+      "image": "",
+      "year": "2026",
+      "category": "bengali"
     },
     {
+      "size": "5 cm",
+      "shape": "round",
+      "download": "",
       "name": "Blue lotus",
-      "year": "2026",
-      "image": "",
-      "download": "",
-      "size": "5 cm",
-      "status": "available",
       "visible": true,
-      "category": "bengali",
-      "shape": "round"
+      "status": "available",
+      "image": "",
+      "year": "2026",
+      "category": "bengali"
     },
     {
+      "size": "5 cm",
+      "shape": "round",
+      "download": "",
       "name": "Nomoshkar",
-      "year": "2026",
-      "image": "",
-      "download": "",
-      "size": "5 cm",
-      "status": "available",
       "visible": true,
-      "category": "bengali",
-      "shape": "round"
+      "status": "available",
+      "image": "",
+      "year": "2026",
+      "category": "bengali"
     },
     {
+      "size": "5 cm",
+      "shape": "square",
+      "download": "",
       "name": "Solder & chill",
-      "year": "2026",
-      "image": "",
-      "download": "",
-      "size": "5 cm",
-      "status": "available",
       "visible": true,
-      "category": "tech",
-      "shape": "square"
+      "status": "available",
+      "image": "",
+      "year": "2026",
+      "category": "tech"
     },
     {
+      "size": "5 cm",
+      "shape": "round",
+      "download": "",
       "name": "ESP32 inside",
-      "year": "2026",
-      "image": "",
-      "download": "",
-      "size": "5 cm",
-      "status": "available",
       "visible": true,
-      "category": "tech",
-      "shape": "round"
+      "status": "available",
+      "image": "",
+      "year": "2026",
+      "category": "tech"
     },
     {
+      "size": "5 cm",
+      "shape": "square",
+      "download": "",
       "name": "Kantha stitch",
-      "year": "2026",
-      "image": "",
-      "download": "",
-      "size": "5 cm",
-      "status": "available",
       "visible": true,
-      "category": "doodles",
-      "shape": "square"
+      "status": "available",
+      "image": "",
+      "year": "2026",
+      "category": "doodles"
     },
     {
-      "name": "404: Na",
-      "year": "2026",
-      "image": "",
-      "download": "",
       "size": "5 cm",
-      "status": "available",
+      "shape": "round",
+      "download": "",
+      "name": "404: Na",
       "visible": true,
-      "category": "doodles",
-      "shape": "round"
+      "status": "available",
+      "image": "",
+      "year": "2026",
+      "category": "doodles"
     }
   ]
 }
