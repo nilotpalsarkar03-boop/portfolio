@@ -46,6 +46,30 @@ collections:
               - { label: Handwritten note (optional), name: note, widget: string, required: false, hint: "Shown next to the featured project, e.g. 'my favourite'" }
               - { label: Case study link (optional), name: link, widget: string, required: false, hint: "A Behance / Figma / PDF link until case-study pages are ready" }
 
+      - name: stickers
+        label: Playground stickers
+        file: content/stickers.json
+        fields:
+          - label: Stickers (drag to reorder — this is the order on the Playground page)
+            name: stickers
+            widget: list
+            summary: "{{fields.name}} — {{fields.status}}"
+            collapsed: true
+            fields:
+              - { label: Show on website, name: visible, widget: boolean, default: true }
+              - { label: Sticker name, name: name, widget: string, hint: "Shown as STICKER / NAME / YEAR" }
+              - { label: Year, name: year, widget: string, default: "2026" }
+              - { label: Sticker image, name: image, widget: image, required: false, hint: "PNG with a transparent background works best (about 1000 × 1000 px). Leave empty to show a blank placeholder." }
+              - { label: Download file (optional), name: download, widget: file, required: false, hint: "High-res PNG or print-ready PDF. If empty, visitors download the sticker image above." }
+              - { label: Print size, name: size, widget: string, default: "5 cm", hint: "Shown on hover, e.g. ↓ PNG · 5 cm" }
+              - label: Status
+                name: status
+                widget: select
+                default: available
+                options:
+                  - { label: "Available to download", value: available }
+                  - { label: "Coming soon", value: soon }
+
       - name: about
         label: About & status
         file: content/about.json
