@@ -1,0 +1,65 @@
+{
+  "projects": [
+    {
+      "visible": true,
+      "title": "Lorem ipsum dolor sit amet, consectetur",
+      "client": "Client",
+      "year": "2026",
+      "role": "",
+      "tags": [
+        "Lorem",
+        "Ipsum",
+        "Dolor"
+      ],
+      "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "cover": "",
+      "note": "lorem ipsum, my favourite",
+      "link": ""
+    },
+    {
+      "visible": true,
+      "title": "Lorem ipsum dolor sit amet",
+      "client": "Client",
+      "year": "2026",
+      "role": "",
+      "tags": [
+        "Lorem",
+        "Ipsum"
+      ],
+      "summary": "Lorem ipsum dolor sit amet · sed do eiusmod tempor incididunt ut labore",
+      "cover": "",
+      "note": "",
+      "link": ""
+    },
+    {
+      "visible": true,
+      "title": "Lorem ipsum dolor sit amet",
+      "client": "Client",
+      "year": "2026",
+      "role": "",
+      "tags": [
+        "Lorem",
+        "Ipsum"
+      ],
+      "summary": "Lorem ipsum dolor sit amet · sed do eiusmod tempor incididunt ut labore",
+      "cover": "",
+      "note": "",
+      "link": ""
+    },
+    {
+      "visible": true,
+      "title": "Lorem ipsum dolor sit amet",
+      "client": "Client",
+      "year": "2026",
+      "role": "",
+      "tags": [
+        "Lorem",
+        "Ipsum"
+      ],
+      "summary": "Lorem ipsum dolor sit amet · sed do eiusmod tempor incididunt ut labore",
+      "cover": "",
+      "note": "",
+      "link": ""
+    }
+  ]
+}

@@ -22,7 +22,7 @@
     <a href="#about">About</a>
   </nav>
   <button class="nav__diya" type="button" aria-label="Dark mode (coming soon)" title="Dark mode coming soon"><img src="assets/diya.svg" alt="" width="24" height="24"></button>
-  <a class="btn btn--primary" href="#" aria-label="Download résumé">Resume ↗</a>
+  <a class="btn btn--primary" data-c="resume" href="#" aria-label="Download résumé">Resume ↗</a>
 </header>
 
 <main id="top">
@@ -38,12 +38,12 @@
 
       <div class="hero__intro">
         <div class="hero__status">
-          <span class="badge"><span class="badge__dot" aria-hidden="true"></span>Open to work</span>
+          <span class="badge" data-c="status"><span class="badge__dot" aria-hidden="true"></span>Open to work</span>
           <span class="label-s muted"><span class="rani ist-time">14:32 IST</span> · Kokrajhar, Assam</span>
         </div>
         <p class="bn-phrase"><span class="bn" lang="bn">নমস্কার</span><span class="hand muted">nomoshkar — hello</span></p>
         <h1 id="hero-title" class="hero__name">portfolio</h1>
-        <p class="hero__bio">I design interfaces and then build them, from research and Figma to frontend code and ESP32 boards. Final-year Multimedia Communication &amp; Design student at CIT Kokrajhar, freelancing in UI/UX and frontend.</p>
+        <p class="hero__bio" data-c="hero_bio">I design interfaces and then build them, from research and Figma to frontend code and ESP32 boards. Final-year Multimedia Communication &amp; Design student at CIT Kokrajhar, freelancing in UI/UX and frontend.</p>
       </div>
 
       <span class="chip chip--xl chip--accent hero__chip" style="--x:333px;--y:695px;--r:6deg">Designer</span>
@@ -54,7 +54,7 @@
 
       <p class="note hero__note" aria-hidden="true">what I do<svg class="note__arrow" width="56" height="28" viewBox="0 -2 60 34" fill="none"><path d="M1 4C29 -2 47 8 57 30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M50.5 25.3L57 30L57.8 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></p>
 
-      <a class="stamp hero__stamp" href="#" aria-label="Download résumé PDF">
+      <a class="stamp hero__stamp" data-c="resume" href="#" aria-label="Download résumé PDF">
         <span class="stamp__ring" aria-hidden="true"></span>
         <span class="stamp__disc"><span class="label-m">Resume ↗</span><span class="label-s">PDF · 2026</span></span>
       </a>
@@ -64,7 +64,7 @@
         <button class="tab" type="button" data-view="designers" aria-pressed="false">For designers</button>
       </div>
       <p class="label-s muted hero__scroll">↓ Scroll</p>
-      <p class="label-s muted hero__count">4 projects · 2026</p>
+      <p class="label-s muted hero__count" data-c="count">4 projects · 2026</p>
     </div>
   </section>
 
@@ -72,7 +72,7 @@
   <section class="section" id="selected-work" data-view="general" aria-labelledby="work-title">
     <div class="bp" aria-hidden="true"></div>
     <div class="wrap stack-64">
-      <div class="sh"><span class="sh__num">(01)</span><h2 class="sh__title" id="work-title">Selected work</h2><span class="sh__rule"></span><span class="label-s muted">4 projects · 2026</span></div>
+      <div class="sh"><span class="sh__num">(01)</span><h2 class="sh__title" id="work-title">Selected work</h2><span class="sh__rule"></span><span class="label-s muted" data-c="count">4 projects · 2026</span></div>
 
       <!-- General view -->
       <div class="view view--general">
@@ -189,15 +189,15 @@
           <p class="note" aria-hidden="true">that’s me, in one line<svg class="note__arrow" width="56" height="28" viewBox="0 -2 60 34" fill="none"><path d="M1 4C29 -2 47 8 57 30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M50.5 25.3L57 30L57.8 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></p>
         </div>
         <div class="bio">
-          <h3 class="h1">Hi, I’m Nilotpal.</h3>
-          <p class="body-l">A final-year Multimedia Communication &amp; Design student at CIT Kokrajhar, Assam, and a freelance designer and developer.</p>
-          <p class="body-m secondary">I like the whole journey: talking to the people I design for, shaping the information architecture, polishing the UI, then writing the frontend myself. The engineering side keeps my designs honest; the design side keeps my builds human.</p>
+          <h3 class="h1" data-c="about_heading">Hi, I’m Nilotpal.</h3>
+          <p class="body-l" data-c="about_lead">A final-year Multimedia Communication &amp; Design student at CIT Kokrajhar, Assam, and a freelance designer and developer.</p>
+          <p class="body-m secondary" data-c="about_body">I like the whole journey: talking to the people I design for, shaping the information architecture, polishing the UI, then writing the frontend myself. The engineering side keeps my designs honest; the design side keeps my builds human.</p>
           <div class="skills">
             <div><p class="label-m accent">Design</p><ul class="tags tags--wrap"><li class="chip">UX research</li><li class="chip">Service design</li><li class="chip">Information architecture</li><li class="chip">UI design</li><li class="chip">Design systems</li><li class="chip">Prototyping</li></ul></div>
             <div><p class="label-m accent">Build</p><ul class="tags tags--wrap"><li class="chip">HTML &amp; CSS</li><li class="chip">JavaScript</li><li class="chip">React</li><li class="chip">Figma to code</li><li class="chip">Responsive web</li></ul></div>
             <div><p class="label-m accent">Make</p><ul class="tags tags--wrap"><li class="chip">ESP32</li><li class="chip">IoT</li><li class="chip">Electronics</li><li class="chip">Edge AI</li></ul></div>
           </div>
-          <dl class="now">
+          <dl class="now" data-c="now">
             <div><dt class="label-s muted">Now</dt><dd>Final-year project: smart facial-recognition security system on ESP32</dd></div>
             <div><dt class="label-s muted">Now</dt><dd>Minor project: a crop protection service for farmers in Kokrajhar</dd></div>
             <div><dt class="label-s muted">Open to</dt><dd>Full-time UI/UX and product design roles, and freelance work</dd></div>
@@ -219,14 +219,14 @@
       <p class="display-l contact__big">Got a role or a project?<br><span class="accent">Let’s make it.</span></p>
       <p class="body-l secondary lead">I’m open to full-time design roles and freelance UI/UX + frontend work. Email is the fastest way to reach me.</p>
       <div class="actions">
-        <a class="btn btn--primary" href="mailto:nilotpalsarkar03@gmail.com">Say hello →</a>
-        <a class="btn btn--secondary" href="#">Download resume</a>
+        <a class="btn btn--primary" data-c="mailto" href="mailto:nilotpalsarkar03@gmail.com">Say hello →</a>
+        <a class="btn btn--secondary" data-c="resume" href="#">Download resume</a>
         <span class="actions__gap" aria-hidden="true"></span>
-        <a class="btn btn--ghost" href="#">LinkedIn ↗</a>
-        <a class="btn btn--ghost" href="#">Behance ↗</a>
-        <a class="btn btn--ghost" href="#">GitHub ↗</a>
+        <a class="btn btn--ghost" data-c="linkedin" href="#" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn btn--ghost" data-c="behance" href="#" target="_blank" rel="noopener">Behance ↗</a>
+        <a class="btn btn--ghost" data-c="github" href="#" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
-      <a class="email" href="mailto:nilotpalsarkar03@gmail.com">nilotpalsarkar03@gmail.com</a>
+      <a class="email" data-c="email" href="mailto:nilotpalsarkar03@gmail.com">nilotpalsarkar03@gmail.com</a>
     </div>
   </section>
 </main>

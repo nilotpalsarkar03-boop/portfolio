@@ -1,0 +1,21 @@
+{
+  "open_to_work": true,
+  "hero_bio": "I design interfaces and then build them, from research and Figma to frontend code and ESP32 boards. Final-year Multimedia Communication & Design student at CIT Kokrajhar, freelancing in UI/UX and frontend.",
+  "about_heading": "Hi, I’m Nilotpal.",
+  "about_lead": "A final-year Multimedia Communication & Design student at CIT Kokrajhar, Assam, and a freelance designer and developer.",
+  "about_body": "I like the whole journey: talking to the people I design for, shaping the information architecture, polishing the UI, then writing the frontend myself. The engineering side keeps my designs honest; the design side keeps my builds human.",
+  "now": [
+    {
+      "label": "Now",
+      "text": "Final-year project: smart facial-recognition security system on ESP32"
+    },
+    {
+      "label": "Now",
+      "text": "Minor project: a crop protection service for farmers in Kokrajhar"
+    },
+    {
+      "label": "Open to",
+      "text": "Full-time UI/UX and product design roles, and freelance work"
+    }
+  ]
+}

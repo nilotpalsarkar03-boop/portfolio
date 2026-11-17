@@ -1,0 +1,73 @@
+# Admin page for nilotpaldesign.com (Decap CMS)
+# Everything you edit here is saved to the content/ folder in the GitHub repo,
+# and Netlify republishes the site automatically.
+
+backend:
+  name: github
+  repo: nilotpalsarkar03-boop/portfolio
+  branch: main
+  commit_messages:
+    update: "Content: update {{slug}} (via admin)"
+    uploadMedia: "Upload {{path}} (via admin)"
+    deleteMedia: "Delete {{path}} (via admin)"
+
+site_url: https://nilotpaldesign.com
+display_url: https://nilotpaldesign.com
+logo_url: /assets/logo.png
+
+media_folder: assets/uploads
+public_folder: /assets/uploads
+
+collections:
+  - name: website
+    label: Website
+    editor:
+      preview: false
+    files:
+      - name: projects
+        label: Projects
+        file: content/projects.json
+        fields:
+          - label: Projects (the first one is the big featured project; drag to reorder)
+            name: projects
+            widget: list
+            max: 6
+            summary: "{{fields.title}} — {{fields.year}}"
+            collapsed: true
+            fields:
+              - { label: Show on website, name: visible, widget: boolean, default: true }
+              - { label: Title, name: title, widget: string }
+              - { label: Client, name: client, widget: string, required: false, hint: "e.g. Freelance, CIT Kokrajhar, Personal" }
+              - { label: Year, name: year, widget: string, default: "2026" }
+              - { label: Your role, name: role, widget: string, required: false, hint: "e.g. UX research, UI design, frontend" }
+              - { label: Tags, name: tags, widget: list, allow_add: true, hint: "Up to 3 short tags, separated by commas", required: false }
+              - { label: Short summary (1–2 sentences), name: summary, widget: text }
+              - { label: Cover image, name: cover, widget: image, required: false, hint: "Landscape works best (about 1600 × 1000 px)" }
+              - { label: Handwritten note (optional), name: note, widget: string, required: false, hint: "Shown next to the featured project, e.g. 'my favourite'" }
+              - { label: Case study link (optional), name: link, widget: string, required: false, hint: "A Behance / Figma / PDF link until case-study pages are ready" }
+
+      - name: about
+        label: About & status
+        file: content/about.json
+        fields:
+          - { label: Open to work, name: open_to_work, widget: boolean, default: true }
+          - { label: Hero bio (under 'portfolio'), name: hero_bio, widget: text }
+          - { label: About heading, name: about_heading, widget: string, default: "Hi, I’m Nilotpal." }
+          - { label: About intro (larger text), name: about_lead, widget: text }
+          - { label: About body, name: about_body, widget: text }
+          - label: Now / Open to
+            name: now
+            widget: list
+            fields:
+              - { label: Label, name: label, widget: string, hint: "Now / Open to" }
+              - { label: Text, name: text, widget: string }
+
+      - name: links
+        label: Links & résumé
+        file: content/links.json
+        fields:
+          - { label: Email, name: email, widget: string }
+          - { label: LinkedIn URL, name: linkedin, widget: string, required: false }
+          - { label: Behance URL, name: behance, widget: string, required: false }
+          - { label: GitHub URL, name: github, widget: string, required: false }
+          - { label: Résumé PDF, name: resume, widget: file, required: false, media_library: { config: { multiple: false } } }
