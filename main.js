@@ -30,7 +30,12 @@
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const arrow = '<svg class="note__arrow" width="56" height="28" viewBox="0 -2 60 34" fill="none"><path d="M1 4C29 -2 47 8 57 30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M50.5 25.3L57 30L57.8 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   const $all = k => document.querySelectorAll(`[data-c="${k}"]`);
-  const img = (p, label) => p.cover ? `<img src="${esc(p.cover)}" alt="${esc(p.title)}" loading="lazy">` : esc(label);
+  // Uploaded images are resized and converted to WebP/AVIF on the fly by Netlify Image CDN
+  const cdn = (src, w) => /^\/assets\/uploads\//.test(src) && location.hostname !== 'localhost'
+    ? `/.netlify/images?url=${encodeURIComponent(src)}&w=${w}&q=75` : src;
+  const img = (p, label, w = 1600) => p.cover
+    ? `<img src="${esc(cdn(p.cover, w))}" srcset="${esc(cdn(p.cover, Math.round(w / 2)))} ${Math.round(w / 2)}w, ${esc(cdn(p.cover, w))} ${w}w" sizes="(max-width: 820px) 100vw, 50vw" alt="${esc(p.title)}" loading="lazy" decoding="async">`
+    : esc(label);
   const tags = (p, n, tag = 'li') => (p.tags || []).slice(0, n).map(t => `<${tag} class="chip">${esc(t)}</${tag}>`).join('');
   const href = p => p.link ? `href="${esc(p.link)}" target="_blank" rel="noopener"` : 'href="#"';
   const num = i => String(i + 1).padStart(2, '0');
@@ -63,7 +68,7 @@
         <a class="irow" ${href(p)}>
           <span class="irow__num">${num(i + 1)}</span><span class="irow__title">${esc(p.title)}</span><span class="irow__spacer"></span>
           <span class="tags">${tags(p, 2, 'span')}</span><span class="label-s muted">${esc(p.year)}</span><span class="irow__arrow" aria-hidden="true"></span>
-          <span class="sticker irow__preview" aria-hidden="true"><span class="sticker__img">${img(p, 'Image')}</span></span>
+          <span class="sticker irow__preview" aria-hidden="true"><span class="sticker__img">${img(p, 'Image', 480)}</span></span>
         </a>`).join('')}</div>` : ''}
       <a class="btn btn--secondary" href="#">View all work →</a>`;
 
