@@ -142,9 +142,14 @@
           </a>`).join('')}</div>` : ''}
         <a class="btn btn--outline" href="#">View all work →</a>`;
 
-      const card = (p, i, grid) => `
-        <article class="pcard">
-          <a class="pcard__img${grid ? ' pcard__img--grid' : ''}" ${href(p)}>${grid ? 'Project image · 3:2' : 'Project image · 16:7'}${pic(p.cover, plain(p.title))}</a>
+      const card = (p, i, grid) => {
+        const src = p.card_image || p.cover;
+        return `
+        <article class="pcard fade${grid ? ' pcard--grid' : ''}">
+          <a class="pcard__img${grid ? ' pcard__img--grid' : ''}${src ? ' has-img' : ''}" ${href(p)} aria-label="Open ${esc(plain(p.title))}">
+            ${src ? pic(src, plain(p.title), 1600) : `<span>${grid ? 'Project image · 3:2' : 'Project image · 16:7'}</span>`}
+            ${p.card_label ? `<span class="pcard__label${i === 0 ? ' pcard__label--subtle' : ''}">${esc(p.card_label)}</span>` : ''}
+          </a>
           <div class="pcard__body">
             <p class="pcard__meta"><span class="label-m accent">${num(i)}</span><span class="label-s muted">${meta(p)}</span></p>
             <h3 class="${grid ? 'h3' : 'h2'}">${rich(p.title)}</h3>
@@ -153,6 +158,7 @@
             <a class="btn btn--ghost" ${href(p)}>Read case study →</a>
           </div>
         </article>`;
+      };
       // 1 big, 2 small, 1 big, 2 small…
       let html = '', i = 0, big = true;
       while (i < ps.length) {
@@ -182,16 +188,27 @@
       });
     }
 
-    // Tabs: For general / For designers
+    // Tabs: For general / For designers. The designers version drops the YouTube section
+    // and can be linked directly as nilotpaldesign.com/?for=designers
+    const setView = (v, animate = true) => {
+      if (!views[v]) v = 'general';
+      section.dataset.view = v;
+      document.body.dataset.view = v;
+      $$('.tab').forEach(t => { const on = t.dataset.view === v; t.classList.toggle('is-active', on); t.setAttribute('aria-pressed', on); });
+      Object.entries(views).forEach(([k, el]) => { el.hidden = k !== v; });
+      if (animate) { views[v].classList.remove('is-entering'); void views[v].offsetWidth; views[v].classList.add('is-entering'); }
+      reveal(views[v]);
+      fit();
+    };
     $$('.tab').forEach(tab => tab.addEventListener('click', () => {
       const v = tab.dataset.view;
       if (section.dataset.view === v) return;
-      section.dataset.view = v;
-      $$('.tab').forEach(t => { const on = t === tab; t.classList.toggle('is-active', on); t.setAttribute('aria-pressed', on); });
-      Object.entries(views).forEach(([k, el]) => { el.hidden = k !== v; });
-      views[v].classList.remove('is-entering'); void views[v].offsetWidth; views[v].classList.add('is-entering');
-      reveal(views[v]); $$('.fade', views[v]).forEach(el => el.classList.add('is-in'));
+      setView(v);
+      const u = new URL(location.href);
+      if (v === 'designers') u.searchParams.set('for', 'designers'); else u.searchParams.delete('for');
+      history.replaceState(null, '', u.pathname + u.search + u.hash);
     }));
+    if (new URLSearchParams(location.search).get('for') === 'designers') setView('designers', false);
 
     Promise.all([load('projects'), load('about'), load('youtube')]).then(([p, a, y]) => {
       if (p) renderProjects(p.projects); renderAbout(a); renderYouTube(y);

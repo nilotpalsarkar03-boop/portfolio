@@ -14,12 +14,14 @@
         "User journey",
         "Stackholder"
       ],
-      "summary": "Introducing agricultural ecosystem with crop-protection service that supports farmers in making informed cultivation decisions & planning their agricultural activities"
+      "summary": "Introducing agricultural ecosystem with crop-protection service that supports farmers in making informed cultivation decisions & planning their agricultural activities",
+      "card_image": "/assets/img/project-01-crop-protection.jpg",
+      "card_label": "Land Planing"
     },
     {
       "visible": true,
       "role": "",
-      "cover": "",
+      "cover": "/assets/img/project-02-game-design.jpg",
       "note": "",
       "link": "",
       "title": "Digital game design in school for elementary kids",
@@ -29,26 +31,31 @@
         "Unity",
         "Research"
       ],
-      "summary": ""
+      "summary": "Approachable solution that help student who are experiencing lack of  understanding in Alphabets in lower grads classes.",
+      "card_image": "/assets/img/project-02-game-design.jpg",
+      "card_label": "Group project"
     },
     {
       "visible": true,
       "role": "",
-      "cover": "",
+      "cover": "/assets/img/project-03-adas.jpg",
       "note": "",
       "link": "",
       "title": "System Design & Complex System in Autonomous -Driving ADAS",
       "year": "2026",
       "tags": [
-        "Complex",
-        "systems Design"
+        "System design",
+        "ADAS",
+        "Complex ui"
       ],
-      "summary": ""
+      "summary": "Intuitive and consistent user interface for the platform's core engineering workflows",
+      "card_image": "/assets/img/project-03-adas.jpg",
+      "card_label": "iNTERNSHIP"
     },
     {
       "visible": true,
       "role": "",
-      "cover": "",
+      "cover": "/assets/img/project-04-oral-care.jpg",
       "note": "",
       "link": "",
       "title": "*/Oral_Care* is very important in India.  But do we care?",
@@ -58,7 +65,9 @@
         "Information",
         "User study"
       ],
-      "summary": ""
+      "summary": "Brushing is not taking care , information design intervening in daily life usages of human ",
+      "card_image": "/assets/img/project-04-oral-care.jpg",
+      "card_label": "Brushing rinsing floshing"
     }
   ]
 }

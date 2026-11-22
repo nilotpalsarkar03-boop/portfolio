@@ -213,14 +213,25 @@ button{font:inherit;border:0;background:none;cursor:pointer;color:inherit}
 .irow:hover .irow__preview,.irow:focus-visible .irow__preview{opacity:1;transform:rotate(-4deg) translateY(0) scale(1)}
 
 /* ============ Selected work — designers view ============ */
+#selected-work[data-view="designers"] .stack-64{gap:48px}
+body[data-view="designers"] #youtube{display:none}
 .view--designers{gap:48px}
-.pcard{display:flex;flex-direction:column;gap:16px;width:100%;padding:12px 12px 24px;background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:transform .3s,box-shadow .3s}
-.pcard:hover{transform:translateY(-4px);box-shadow:0 18px 40px -20px rgba(22,22,19,.25)}
+.pcard{display:flex;flex-direction:column;gap:16px;width:100%;padding:12px 12px 24px;background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:transform .45s var(--spring),box-shadow .35s,opacity .7s ease-out var(--d,0s)}
+.pcard:hover{transform:translateY(-6px);box-shadow:0 24px 44px -22px rgba(22,22,19,.3)}
 .pcard__img{position:relative;overflow:hidden;height:560px;display:flex;align-items:center;justify-content:center;border-radius:8px;background:var(--accent-subtle);color:var(--on-subtle);font:400 12px/16px var(--mono);letter-spacing:.48px;text-transform:uppercase}
 .pcard__img--grid{height:400px}
+.pcard__img .ph{object-position:50% 40%;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.pcard:hover .pcard__img .ph{transform:scale(1.05)}
+.pcard:not(.pcard--grid) .pcard__img.has-img::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,rgba(102,102,102,0) 31.6%,rgba(61,79,214,.34) 76.7%)}
+.pcard:not(.pcard--grid):last-child .pcard__img.has-img::after{background:linear-gradient(to bottom,rgba(255,255,255,0) 15.8%,rgba(61,79,214,.52) 83.3%)}
+.pcard__label{position:absolute;left:0;right:0;bottom:0;z-index:1;text-align:center;font:400 12px/16px var(--mono);letter-spacing:.48px;text-transform:uppercase;color:var(--rani);transition:transform .4s var(--spring),letter-spacing .4s}
+.pcard__label--subtle{color:var(--on-subtle)}
+.pcard:hover .pcard__label{transform:translateY(-6px);letter-spacing:1.6px}
 .pcard__body{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:0 12px}
 .pcard__meta{display:flex;align-items:center;gap:12px}
+.pcard .h3{font:600 24px/32px var(--sans);letter-spacing:-.24px}
 .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:24px;width:100%}
+.pgrid .pcard{height:100%}
 
 /* ============ Polaroids (After hours + Scrapbook) ============ */
 .pol{position:absolute;left:var(--cx);top:var(--cy);width:var(--w);display:flex;flex-direction:column;gap:12px;padding:12px 12px 16px;background:var(--surface);box-shadow:0 8px 9px rgba(13,13,10,.22);transform:translate(-50%,-50%) rotate(var(--r));transition:transform .45s var(--spring),box-shadow .35s;z-index:1}
@@ -467,6 +478,8 @@ button{font:inherit;border:0;background:none;cursor:pointer;color:inherit}
   .portrait__photo{left:2.5%;top:2.6%;width:94.6%;height:94.8%}
   .portrait .note{left:24%;top:auto;bottom:3%}
   .contact__big{white-space:normal}
+  .pcard__img{height:auto;aspect-ratio:1254/560}
+  .pcard__img--grid{aspect-ratio:602/400}
   .irow__preview{display:none}
   .featured,.yt-feat{flex-direction:column;align-items:stretch;gap:40px}
   .featured__media,.yt-feat__media{width:100%;max-width:760px}
@@ -515,8 +528,10 @@ button{font:inherit;border:0;background:none;cursor:pointer;color:inherit}
   .irow .tags{flex-wrap:wrap;order:4;flex-basis:100%}
   .irow__year{order:5}
   .pgrid{grid-template-columns:1fr}
-  .pcard__img{height:auto;aspect-ratio:16/9}
-  .pcard__img--grid{aspect-ratio:3/2}
+  .pcard__img,.pcard__img--grid{height:auto;aspect-ratio:4/3}
+  .pcard .h2{font-size:24px;line-height:32px}
+  .pcard .h3{font-size:20px;line-height:28px}
+  .pcard .tags{flex-wrap:wrap}
   .bn{font-size:30px;line-height:40px}
   .bn-phrase{flex-wrap:wrap;white-space:normal;gap:8px}
   .footer__row{flex-wrap:wrap;gap:12px}

@@ -45,7 +45,9 @@ collections:
               - { label: Your role, name: role, widget: string, required: false, hint: "e.g. UX research, UI design, frontend" }
               - { label: Tags, name: tags, widget: list, allow_add: true, hint: "Up to 3 short tags, separated by commas", required: false }
               - { label: Short summary (1–2 sentences), name: summary, widget: text }
-              - { label: Cover image, name: cover, widget: image, required: false, hint: "Landscape works best (about 1600 × 1000 px)" }
+              - { label: Cover image (For general view), name: cover, widget: image, required: false, hint: "Shown in the tilted sticker (first project) and the hover preview of the list" }
+              - { label: Card image (For designers view), name: card_image, widget: image, required: false, hint: "Wide photo for the big project card, about 1600 × 1000 px" }
+              - { label: Card image label, name: card_label, widget: string, required: false, hint: "Tiny pink label at the bottom of the card photo, e.g. Land planning" }
               - { label: Handwritten note (optional), name: note, widget: string, required: false, hint: "Shown next to the featured project, e.g. 'my favourite'" }
               - { label: Case study link (optional), name: link, widget: string, required: false, hint: "A Behance / Figma / PDF link until case-study pages are ready" }
 
