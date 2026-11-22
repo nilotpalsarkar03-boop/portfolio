@@ -182,7 +182,12 @@
     function renderAbout(a) {
       if (!a) return;
       $all('status').forEach(el => el.hidden = a.open_to_work === false);
-      ['hero_bio', 'about_heading', 'about_lead', 'about_body'].forEach(k => { if (a[k]) $all(k).forEach(el => el.textContent = a[k]); });
+      ['about_heading', 'about_lead', 'about_body'].forEach(k => { if (a[k]) $all(k).forEach(el => el.textContent = a[k]); });
+      // Hero bio: a leading "/name," shows in rani pink and the rest in italics, as in Figma
+      if (a.hero_bio) $all('hero_bio').forEach(el => {
+        const m = String(a.hero_bio).trim().match(/^(\/[^,]+)(,\s*)([\s\S]*)$/);
+        el.innerHTML = m ? `<span class="rani">${esc(m[1])}</span>${esc(m[2])}<em>${esc(m[3])}</em>` : esc(a.hero_bio);
+      });
       if (Array.isArray(a.now) && a.now.length) $all('now').forEach(el => {
         el.innerHTML = a.now.map(n => `<div><dt class="label-s muted">${esc(n.label)}</dt><dd>${esc(n.text)}</dd></div>`).join('');
       });
