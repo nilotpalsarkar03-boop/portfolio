@@ -34,11 +34,12 @@ collections:
           - label: Projects (the first one is the big featured project; drag to reorder)
             name: projects
             widget: list
-            max: 6
+            max: 12
             summary: "{{fields.title}} — {{fields.year}}"
             collapsed: true
             fields:
               - { label: Show on website, name: visible, widget: boolean, default: true }
+              - { label: Show on the home page too, name: show_on_home, widget: boolean, default: true, hint: "Off = only on the Work page" }
               - { label: Title, name: title, widget: string, hint: "Wrap words in *stars* to colour them pink, e.g. */Oral_Care* is very important" }
               - { label: Client, name: client, widget: string, required: false, hint: "e.g. Freelance, CIT Kokrajhar, Personal" }
               - { label: Year, name: year, widget: string, default: "2026" }
@@ -48,8 +49,29 @@ collections:
               - { label: Cover image (For general view), name: cover, widget: image, required: false, hint: "Shown in the tilted sticker (first project) and the hover preview of the list" }
               - { label: Card image (For designers view), name: card_image, widget: image, required: false, hint: "Wide photo for the big project card, about 1600 × 1000 px" }
               - { label: Card image label, name: card_label, widget: string, required: false, hint: "Tiny pink label at the bottom of the card photo, e.g. Land planning" }
+              - { label: Work page — title (optional), name: work_title, widget: string, required: false, hint: "Only if the Work page should use a different title" }
+              - { label: Work page — image label (optional), name: work_label, widget: string, required: false }
+              - { label: Status chip (optional), name: status, widget: string, required: false, hint: "Pink chip before the tags, e.g. Working, Coming soon" }
+              - { label: Work page filters, name: categories, widget: select, multiple: true, required: false, options: [{ label: Service design, value: service }, { label: Mobile, value: mobile }, { label: Web, value: web }, { label: Branding, value: branding }] }
+              - { label: Card background, name: card_style, widget: select, required: false, default: normal, options: [{ label: Normal, value: normal }, { label: Pink glow (for transparent PNG mockups), value: pink }] }
               - { label: Handwritten note (optional), name: note, widget: string, required: false, hint: "Shown next to the featured project, e.g. 'my favourite'" }
               - { label: Case study link (optional), name: link, widget: string, required: false, hint: "A Behance / Figma / PDF link until case-study pages are ready" }
+
+      - name: other_work
+        label: Other work (Work page list)
+        file: content/other-work.json
+        fields:
+          - label: Smaller projects & experiments (the section stays hidden until you add one)
+            name: items
+            widget: list
+            summary: "{{fields.title}} — {{fields.year}}"
+            collapsed: true
+            fields:
+              - { label: Year, name: year, widget: string, default: "2026" }
+              - { label: Title, name: title, widget: string }
+              - { label: Short description, name: description, widget: text }
+              - { label: Label (right side), name: label, widget: string, required: false, hint: "e.g. Poster, App, Motion" }
+              - { label: Link (optional), name: link, widget: string, required: false }
 
       - name: stickers
         label: Playground stickers

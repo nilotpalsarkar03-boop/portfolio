@@ -16,7 +16,13 @@
       ],
       "summary": "Introducing agricultural ecosystem with crop-protection service that supports farmers in making informed cultivation decisions & planning their agricultural activities",
       "card_image": "/assets/img/project-01-crop-protection.jpg",
-      "card_label": "Land Planing"
+      "card_label": "Land Planing",
+      "categories": [
+        "service"
+      ],
+      "status": "Working",
+      "work_label": "crop protection",
+      "show_on_home": true
     },
     {
       "visible": true,
@@ -33,7 +39,12 @@
       ],
       "summary": "Approachable solution that help student who are experiencing lack of  understanding in Alphabets in lower grads classes.",
       "card_image": "/assets/img/project-02-game-design.jpg",
-      "card_label": "Group project"
+      "card_label": "Group project",
+      "categories": [
+        "mobile"
+      ],
+      "work_label": "Group project",
+      "show_on_home": true
     },
     {
       "visible": true,
@@ -50,7 +61,13 @@
       ],
       "summary": "Intuitive and consistent user interface for the platform's core engineering workflows",
       "card_image": "/assets/img/project-03-adas.jpg",
-      "card_label": "iNTERNSHIP"
+      "card_label": "iNTERNSHIP",
+      "categories": [
+        "web"
+      ],
+      "status": "Coming Soon",
+      "work_label": "iNTERNSHIP",
+      "show_on_home": true
     },
     {
       "visible": true,
@@ -67,7 +84,37 @@
       ],
       "summary": "Brushing is not taking care , information design intervening in daily life usages of human ",
       "card_image": "/assets/img/project-04-oral-care.jpg",
-      "card_label": "Brushing rinsing floshing"
+      "card_label": "Brushing rinsing floshing",
+      "categories": [
+        "service"
+      ],
+      "work_title": "Service intervention in oral hygiene",
+      "work_label": "Service design",
+      "show_on_home": true
+    },
+    {
+      "visible": true,
+      "show_on_home": false,
+      "title": "Intervening the fraud refund process and centralizing it",
+      "client": "",
+      "year": "2026",
+      "role": "",
+      "tags": [
+        "System",
+        "interface design",
+        "UX research"
+      ],
+      "summary": "Designing  service intervention in oral care and understanding the need of informed decision making.",
+      "cover": "/assets/img/project-05-refund-laptop.png",
+      "card_image": "/assets/img/project-05-refund-laptop.png",
+      "card_label": "System design",
+      "work_label": "System design",
+      "card_style": "pink",
+      "categories": [
+        "web"
+      ],
+      "note": "",
+      "link": ""
     }
   ]
 }

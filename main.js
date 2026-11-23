@@ -112,7 +112,7 @@
     const plain = s => String(s || '').replace(/\*/g, '');
 
     function renderProjects(list) {
-      const ps = (list || []).filter(p => p.visible !== false).slice(0, 6);
+      const ps = (list || []).filter(p => p.visible !== false && p.show_on_home !== false).slice(0, 6);
       if (!ps.length) return;
       const years = ps.map(p => p.year).filter(Boolean).sort();
       const countText = `${ps.length} project${ps.length > 1 ? 's' : ''}${years.length ? ' · ' + years[years.length - 1] : ''}`;
@@ -140,7 +140,7 @@
             <span class="tags">${tags(p, 3, 'span')}</span><span class="label-s muted irow__year">${esc(p.year)}</span><span class="irow__arrow" aria-hidden="true"></span>
             <span class="sticker irow__preview" aria-hidden="true"><span class="sticker__img">Image${pic(p.cover, '', 480)}</span></span>
           </a>`).join('')}</div>` : ''}
-        <a class="btn btn--outline" href="#">View all work →</a>`;
+        <a class="btn btn--outline" href="/work">View all work →</a>`;
 
       const card = (p, i, grid) => {
         const src = p.card_image || p.cover;
@@ -410,6 +410,74 @@
     }
 
     Promise.all([load('stickers')]).then(([s]) => renderStickers(s));
+  }
+
+  /* ================= WORK ================= */
+  if (document.body.classList.contains('page-work')) {
+    const list = $('[data-c="work_list"]');
+    const href = p => p.link ? `href="${esc(p.link)}" target="_blank" rel="noopener"` : 'href="#"';
+    const plain = s => String(s || '').replace(/\*/g, '');
+    let all = [], filter = 'all', newest = true;
+    const card = (p, i, grid) => {
+      const src = p.card_image || p.cover, title = p.work_title || p.title, label = p.work_label || p.card_label;
+      const pink = p.card_style === 'pink';
+      const tags = [p.status ? `<li class="chip chip--status">${esc(p.status)}</li>` : '', ...(p.tags || []).slice(0, 3).map(t => `<li class="chip">${esc(t)}</li>`)].join('');
+      return `
+        <article class="pcard${grid ? ' pcard--grid' : ' pcard--feat'}${pink ? ' pcard--pink' : ''}" style="--d:${(i % 2) * .08}s">
+          <a class="pcard__img${grid ? ' pcard__img--grid' : ''}${src ? ' has-img' : ''}" ${href(p)} aria-label="Open ${esc(plain(title))}">
+            ${src ? `<img class="ph" src="${esc(src)}" alt="${esc(plain(title))}" loading="lazy" decoding="async" onerror="this.hidden=true">` : `<span>Project image</span>`}
+            ${label ? `<span class="pcard__label${(!grid || pink) ? ' pcard__label--subtle' : ''}">${esc(label)}</span>` : ''}
+          </a>
+          <div class="pcard__body">
+            <p class="pcard__meta"><span class="label-m accent">${String(i + 1).padStart(2, '0')}</span><span class="label-s muted">${[p.client, p.year].filter(Boolean).map(esc).join(' · ')}</span></p>
+            <h3 class="${grid ? 'h3' : 'h2'}">${rich(title)}</h3>
+            ${p.summary ? `<p class="body-m secondary">${esc(p.summary)}</p>` : ''}
+            <ul class="tags">${tags}</ul>
+            <a class="btn btn--ghost" ${href(p)}>Read case study →</a>
+          </div>
+        </article>`;
+    };
+    function renderWork() {
+      let ps = all.map((p, n) => ({ ...p, _n: n })).filter(p => filter === 'all' || (p.categories || []).includes(filter));
+      if (!newest) ps.reverse();
+      if (!ps.length) { list.innerHTML = `<div class="wempty"><p class="hand">nothing here yet — this shelf is still empty</p><p class="label-s muted">try another filter</p></div>`; return; }
+      let html = '', i = 0;
+      html += card(ps[0], 0, false); i = 1;
+      while (i < ps.length) {
+        if (i + 1 < ps.length) { html += `<div class="pgrid">${card(ps[i], i, true)}${card(ps[i + 1], i + 1, true)}</div>`; i += 2; }
+        else { html += card(ps[i], i, false); i++; }
+      }
+      list.innerHTML = html;
+      $$('.pcard', list).forEach((el, k) => { el.style.setProperty('--d', (k * .06) + 's'); el.classList.add('is-enter'); });
+      arrows(list);
+    }
+    load('projects').then(d => {
+      all = ((d && d.projects) || []).filter(p => p.visible !== false);
+      const years = all.map(p => +p.year).filter(Boolean);
+      $all('work_count').forEach(el => el.textContent = all.length);
+      if (years.length) $all('work_meta').forEach(el => el.textContent = `${all.length} project${all.length > 1 ? 's' : ''} · ${Math.min(...years)} — ${Math.max(...years)}`);
+      renderWork();
+    });
+    $$('.filter').forEach(b => b.addEventListener('click', () => {
+      filter = b.dataset.f;
+      $$('.filter').forEach(x => { x.classList.toggle('is-on', x === b); x.setAttribute('aria-pressed', x === b); });
+      renderWork();
+    }));
+    const sort = $('.wsort');
+    sort?.addEventListener('click', () => {
+      newest = !newest;
+      sort.firstElementChild.textContent = newest ? 'newest' : 'oldest';
+      sort.classList.toggle('is-flip', !newest);
+      renderWork();
+    });
+    load('other-work').then(d => {
+      const items = ((d && d.items) || []).filter(x => x.title);
+      if (!items.length) return;
+      $('[data-c="other_list"]').innerHTML = items.map(x => `
+        <${x.link ? `a href="${esc(x.link)}" target="_blank" rel="noopener"` : 'div'} class="lrow fade"><p class="label-s muted lrow__left">${esc(x.year)}</p><h3 class="lrow__title">${esc(x.title)}</h3><p class="body-m secondary lrow__desc">${esc(x.description)}</p><p class="label-m accent lrow__right">${esc(x.label || '')}</p></${x.link ? 'a' : 'div'}>`).join('');
+      $('#other-work').hidden = false;
+      reveal($('#other-work'));
+    });
   }
 
   /* ================= ABOUT ================= */
