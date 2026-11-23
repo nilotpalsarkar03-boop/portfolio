@@ -412,6 +412,56 @@
     Promise.all([load('stickers')]).then(([s]) => renderStickers(s));
   }
 
+  /* ================= ABOUT ================= */
+  if (document.body.classList.contains('page-about')) {
+    load('youtube').then(renderYouTube);
+    load('about').then(a => {
+      if (!a) return;
+      $all('status').forEach(el => el.hidden = a.open_to_work === false);
+      if (a.about_body) $all('about_body').forEach(el => el.textContent = a.about_body);
+    });
+
+    // Stats count up when they scroll into view
+    const counters = $$('[data-count]');
+    const runCount = el => {
+      const to = +el.dataset.count, pad = el.textContent.trim().length;
+      if (reduced) return;
+      const t0 = performance.now(), dur = 900 + to * 25;
+      const step = t => { const p = Math.min(1, (t - t0) / dur), v = Math.round(to * (1 - Math.pow(1 - p, 3)));
+        el.textContent = String(v).padStart(pad, '0'); if (p < 1) requestAnimationFrame(step); };
+      requestAnimationFrame(step);
+    };
+    if ('IntersectionObserver' in window) {
+      const co = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { runCount(e.target); co.unobserve(e.target); } }), { threshold: .6 });
+      counters.forEach(el => co.observe(el));
+    }
+
+    // Contact form: no server needed — it opens the visitor's email app with everything filled in
+    const form = $('.cform');
+    form?.addEventListener('submit', e => {
+      e.preventDefault();
+      const msg = $('.cform__msg', form);
+      const f = Object.fromEntries(new FormData(form).entries());
+      let bad = null;
+      [['name', v => v.trim().length > 1], ['email', v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim())], ['message', v => v.trim().length > 4]].forEach(([k, ok]) => {
+        const field = form.elements[k].closest('.field');
+        field.classList.remove('is-bad'); void field.offsetWidth;
+        if (!ok(f[k] || '')) { field.classList.add('is-bad'); bad = bad || k; }
+      });
+      if (bad) {
+        msg.classList.remove('is-ok');
+        msg.textContent = { name: 'Please add your name.', email: 'That email doesn’t look right.', message: 'Write a short message first.' }[bad];
+        form.elements[bad].focus(); return;
+      }
+      const to = ($('[data-c="email"]', form)?.textContent || 'nilotpalsarkar03@gmail.com').trim();
+      const subject = `Portfolio enquiry from ${f.name.trim()}${f.company ? ' (' + f.company.trim() + ')' : ''}`;
+      const body = `${f.message.trim()}\n\n— ${f.name.trim()}\n${f.email.trim()}${f.company ? '\n' + f.company.trim() : ''}`;
+      location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      msg.classList.add('is-ok');
+      msg.textContent = 'Opening your email app with the message ready to send ✓';
+    });
+  }
+
   load('links').then(renderLinks);
   arrows(); reveal(); fit();
 })();
