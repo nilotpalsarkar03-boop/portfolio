@@ -36,12 +36,12 @@
     },
     {
       "size": "5 cm",
-      "shape": "round",
-      "download": "",
+      "shape": "square",
+      "download": "/assets/uploads/subtract.png",
       "name": "Nomoshkar",
       "visible": true,
-      "status": "available",
-      "image": "",
+      "status": "soon",
+      "image": "/assets/uploads/subtract.png",
       "year": "2026",
       "category": "bengali"
     },
