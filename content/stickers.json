@@ -24,15 +24,15 @@
       "category": "bengali"
     },
     {
-      "size": "5 cm",
-      "shape": "round",
-      "download": "",
-      "name": "Blue lotus",
+      "size": "6 cm",
+      "shape": "square",
+      "download": "/assets/uploads/design_6cm.png",
+      "name": "Design Journey",
       "visible": true,
       "status": "available",
-      "image": "",
+      "image": "/assets/uploads/design_6cm.png",
       "year": "2026",
-      "category": "bengali"
+      "category": "tech"
     },
     {
       "size": "5 cm",
